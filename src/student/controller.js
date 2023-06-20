@@ -48,14 +48,20 @@ const deleteStudent = (req, res) => {
 const updateStudent = (req, res) => {
   const id = parseInt(req.params.id);
   const { name, email, age, dob } = req.body;
-  Pool.query(
-    queries.updateStudent,
-    [name, email, age, dob],
-    (error, results) => {
-      if (error) throw error;
-      res.status(200).send(`Student modified with ID: ${id}`);
-    }
-  );
+
+  Pool.query(queries.getStudentById, [id], (error, results) => {
+    if (!results.rows.length)
+      res.status(400).send(`Student with ID: ${id} does not exist`);
+
+    Pool.query(
+      queries.updateStudent,
+      [name, email, age, dob, id],
+      (error, results) => {
+        if (error) throw error;
+        res.status(200).send(`Student updated Successfully with ID: ${id}`);
+      }
+    );
+  });
 };
 
 //! Export functions
