@@ -2,7 +2,7 @@
 
 Node js, PostgreSQL, Javascript.
 
-### API Endpoints
+## API Endpoints
 
 1. GET /students
    `localhost:3000/students`
@@ -14,3 +14,12 @@ Node js, PostgreSQL, Javascript.
    `localhost:3000/students/1`
 5. DELETE /students/:id
    `localhost:3000/students/1`
+
+## Database
+
+### Students Table
+
+1. name
+2. email
+3. age
+4. dob (date of birth)
