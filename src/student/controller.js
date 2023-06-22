@@ -2,7 +2,6 @@ const Pool = require("../../db");
 const queries = require("./queries");
 
 //! Controller functions
-
 //? Get all students
 const getStudent = (req, res) => {
   Pool.query(queries.getStudent, (error, results) => {
