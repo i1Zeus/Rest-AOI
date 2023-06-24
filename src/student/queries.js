@@ -20,7 +20,7 @@ const deleteStudent = "DELETE FROM students WHERE id = $1";
 const updateStudent =
   "UPDATE students SET name = $1, email = $2, age = $3, dob = $4 WHERE id = $5";
 
-//! Export queries 
+//! Export queries
 module.exports = {
   getStudent,
   getStudentById,
